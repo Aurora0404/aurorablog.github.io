@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="以彗星为龙，以彗星为绳结。描绘出割裂的彗星舞动的形态。又是一轮岁月。"><meta name="keywords" content><meta name="author" content="wflight"><meta name="copyright" content="wflight"><title>以彗星为龙，以彗星为绳结。描绘出割裂的彗星舞动的形态。又是一轮岁月。 | wflihgt's blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="author-info"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">wflight</div><div class="author-info__description text-center">以彗星为龙，以彗星为绳结。描绘出割裂的彗星舞动的形态。又是一轮岁月。</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">51</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">15</span></a></div></div></div><nav id="nav" style="background-image: url(/img/yourname.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">wflihgt's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> Search</span></a><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="site-info"><div id="site-title">wflihgt's blog</div><div id="site-sub-title">以彗星为龙，以彗星为绳结。描绘出割裂的彗星舞动的形态。又是一轮岁月。</div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/骑马修栅栏-题解/">骑马修栅栏-题解</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+查看原题请戳这里
+我做的第一道欧拉路径的题说实话，这就一板子题…… 欧拉路径不会求的戳这里。 直接上代码：
+#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;cmath&gt;
+# ...</div><a class="more" href="/2019/08/02/骑马修栅栏-题解/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/局域网-题解/">局域网-题解</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+查看题目戳这里
+一道最小生成树的裸题，这里我们用kruskal来做kruskal 是一种求最小生成树的算法，时间复杂度为O(nlogn)它的算法思路是这样的：我们根据边的权值将所有边排序，然后枚举每条边，用并查集去查询这条边的两个端点是否在同一集合内，若在同一集合内，则删掉这条边，若不在同一结合则 ...</div><a class="more" href="/2019/08/02/局域网-题解/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/Ant Trip-题解/">Ant Trip-题解</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+查看原题请戳这里因为每条边都只能走一次，所以这道题可以用欧拉路的性质来求解。我们首先用并查集去记录每一个联通块，然后再统计每一个子图的奇点数，如果是偶数则满足欧拉回路的性质直接ans++ 就好了，如果是奇数，那么需要的蚂蚁数则是奇点数/2附一下代码：
+12345678910111213141516 ...</div><a class="more" href="/2019/08/02/Ant Trip-题解/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/Dijkstra-学习/">Dijkstra-学习</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+前言SPFA算法由于它上限O(NM)的时间复杂度,被卡掉的几率很大.在算法竞赛中,我们需要一个更稳定的算法:dijkstra
+什么是dijkstra?dijkstra是一种单源最短路径算法,时间复杂度上限为O(n^2)(朴素),在实际应用中较为稳定;加上堆优化之后更是具有O((n+m)log^2  ...</div><a class="more" href="/2019/08/02/Dijkstra-学习/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/Largest Rectangle in a Histogram-题解/">Largest Rectangle in a Histogram-题解</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+查看原题请戳这里我们用单调栈来维护每一个小矩形的左侧和右侧第一个比它低的矩形的位置。为什么要维护这个呢？根据木桶原理，每一个大矩形的高度是由其高度最小的矩形的高度决定的，所以我们要去记录第一个比当前矩形小的矩形的位置。ps：别忘了初始化qwq……附一下代码：
+1234567891011121314 ...</div><a class="more" href="/2019/08/02/Largest Rectangle in a Histogram-题解/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/分层图最短路-学习/">分层图最短路-学习</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+ARX：我今天上午做了两个分层图最短路的题，可简单了……概念
+分层图最短路是指在可以进行分层图的图上解决最短路问题。一般模型是：在图上，有k次机会可以直接通过一条边，问起点与终点之间的最短路径。
+
+算法思路这是一个类似于DP的思路。用直接通过的边把整个图分成k个子图，其中k为可以直接通过的边的个数 ...</div><a class="more" href="/2019/08/02/分层图最短路-学习/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/拓扑排序-学习/">拓扑排序-学习</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+·拓扑排序是什么呢？我们先来看一下标准解释：对一个有向无环图(Directed Acyclic Graph简称DAG)G进行拓扑排序，是将G中所有顶点排成一个线性序列，使得图中任意一对顶点u和v，若边(u,v)∈E(G)，则u在线性序列中出现在v之前。通常，这样的线性序列称为满足拓扑次序(Topo ...</div><a class="more" href="/2019/08/02/拓扑排序-学习/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/小Z的袜子-题解/">小Z的袜子-题解</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+查看原题请戳这里
+突然感觉qxy和小z是同种生物莫队的一道裸题虽说莫队算是一种暴力的算法，但ta依然是某些题目的正解的。（dfs：我不服）
+这道题是需要我们经过一定的数学推导才可以做出来的。具体过程如下：对于L,R的询问。 设其中颜色为x,y,z的袜子的个数为a,b,c… 那么答案即为 (a*(a ...</div><a class="more" href="/2019/08/02/小Z的袜子-题解/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/无线通讯网-题解/">无线通讯网-题解</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+
+直到敲完这个题，我才发现原来prim如果用邻接矩阵存图即使加上堆优化时间复杂度依然是O(n2)qwq……
+
+首先，由于两个点只需要间接联通就可以互相通讯，所以这道题可以用最小生成树去做。这一步比较好完成。  
+问题在于怎么去加卫星电话。由于两个点只要间接联通就可以，那么每一个用无线电收发器连成的 ...</div><a class="more" href="/2019/08/02/无线通讯网-题解/#more" style="margin-top: 14px">Read more</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2019/08/02/最短路计数-题解/">最短路计数-题解</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time><div class="content">
+查看原题请戳这里
+虽然题目叫最短路计数，但是TA可以只用到最短路的概念而不用最短路的算法……由于这是一个无权图，所以一条路径上边的数量就是这条路径的长度，那么我们就可以用BFS来搞定这个问题了。
+具体思路我们每遍历到一个节点就和ta的前一个结点的距离比较，这里会有三种情况：(由1到2)
+
+2号点没 ...</div><a class="more" href="/2019/08/02/最短路计数-题解/#more" style="margin-top: 14px">Read more</a><hr></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-chevron-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/yourname.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2019 By wflight</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

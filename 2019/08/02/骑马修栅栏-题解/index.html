@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="骑马修栅栏-题解"><meta name="keywords" content><meta name="author" content="wflight"><meta name="copyright" content="wflight"><title>骑马修栅栏-题解 | wflihgt's blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我做的第一道欧拉路径的题"><span class="toc-number">1.</span> <span class="toc-text">我做的第一道欧拉路径的题</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">wflight</div><div class="author-info__description text-center">以彗星为龙，以彗星为绳结。描绘出割裂的彗星舞动的形态。又是一轮岁月。</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">51</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">15</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/yourname.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">wflihgt's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> Search</span></a><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">骑马修栅栏-题解</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-02</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><div class="post-body" itemprop="articleBody">
+<p><a href="https://www.luogu.org/problemnew/show/P2731" rel="noopener" target="_blank" title="查看原题请戳这里">查看原题请戳这里</a></p>
+<h1 id="我做的第一道欧拉路径的题"><a class="headerlink" href="#我做的第一道欧拉路径的题" title="我做的第一道欧拉路径的题"></a>我做的第一道欧拉路径的题</h1><p>说实话，这就一板子题…… <a href="http://47.92.113.238/qxiangya/?p=298" rel="noopener" target="_blank" title="欧拉路径不会求的戳这里。">欧拉路径不会求的戳这里。</a> 直接上代码：</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;cmath&gt;
+#include&lt;algorithm&gt;
+#define INF 0x7fffffff
+#define ll long long
+
+<p>using namespace std;</p>
+<p>int n,m,x,y,head[1200],cnt,map[1030][1030],d[1030],begin,s[1030],t;</p>
+<p>void dfs(int k)<br>{<br>    for(register int i = 1; i &lt;= n; i++)<br>    {<br>        if(map[k][i] &gt; 0)<br>        {<br>            map[k][i] –;<br>            map[i][k] –;<br>            dfs(i);<br>        }<br>    }<br>    s[++t] = k;<br>}</p>
+<p>int main()<br>{<br>    scanf(“%d”,&amp;m);<br>    for(register int i = 1; i &lt;= m; i++)<br>    {<br>        scanf(“%d%d”,&amp;x,&amp;y);<br>        map[x][y] ++;<br>        map[y][x] ++;<br>        n = max(n,x);<br>        n = max(n,y);<br>        d[x] ++;<br>        d[y] ++;<br>    }<br>    for(register int i = 1; i &lt;= n; i++)<br>    {<br>        if(d[i] % 2 == 1)<br>        {<br>            begin = i;<br>            break;<br>        }<br>    }<br>    if(begin == 0) begin = 1;<br>    dfs(begin);<br>    for(register int i = t; i &gt;0; i–) printf(“%d\n”,s[i]);<br>    printf(“\n”);<br>    return 0;<br>}</p></code></pre><p></p>
+</div></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">wflight</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/08/02/骑马修栅栏-题解/">http://yoursite.com/2019/08/02/骑马修栅栏-题解/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/08/02/导弹拦截-题解/"><i class="fa fa-chevron-left">  </i><span>导弹拦截-题解</span></a></div><div class="next-post pull-right"><a href="/2019/08/02/局域网-题解/"><span>局域网-题解</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/yourname.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2019 By wflight</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
