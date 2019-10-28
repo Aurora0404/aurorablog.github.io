@@ -662,3 +662,54 @@ $(function () {
   }
 
 });
+
+
+
+
+var script = document.createElement("script");
+script.setAttribute("type", "text/javascript");
+script.setAttribute("src", "https://imsun.github.io/gitment/dist/gitment.browser.js");
+var heads = document.getElementsByTagName("head");
+if (heads.length)
+    heads[0].appendChild(script);
+else
+    document.documentElement.appendChild(script);
+
+
+
+var doc = document;
+var link = doc.createElement("link");
+link.setAttribute("rel", "stylesheet");
+link.setAttribute("type", "text/css");
+link.setAttribute("href", "https://imsun.github.io/gitment/style/default.css");
+var heads = doc.getElementsByTagName("head");
+if (heads.length)
+    heads[0].appendChild(link);
+else
+    doc.documentElement.appendChild(link);
+
+
+
+var TalkDiv=document.createElement("div"); 
+TalkDiv.setAttribute("id", "gitmentContainer"); 
+    
+
+var ___x = document.getElementById("content-inner");
+___x.appendChild(TalkDiv)
+// x[0].innerHTML = "Hello World!";
+
+
+var Title__ = document.getElementsByClassName("posttitle")[0].textContent;
+// var __date
+
+
+var gitment = new Gitment({
+    id: Title__,
+    owner: 'wflight',
+    repo: 'wflight.github.io',
+    oauth: {
+        client_id: 'fdf09859928571ffc2e0',
+        client_secret: '97d25f43829e31d0fd93eda968bdd08d0d5e16cf',
+    },
+});
+gitment.render('gitmentContainer')
