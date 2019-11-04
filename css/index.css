@@ -1359,8 +1359,8 @@ footer {
 }
 #site-title,
 #site-sub-title {
-  color: #fafad2;
-  text-shadow: 0.1rem 0.1rem 0.1rem rgba(255,165,0,0.5);
+  color: #eee;
+  text-shadow: 0.1rem 0.1rem 0.1rem rgba(255,165,255,0.5);
   line-height: 1.5;
   text-align: center;
 }
